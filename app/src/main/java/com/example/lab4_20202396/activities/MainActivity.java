@@ -1,4 +1,4 @@
-package com.example.lab4_20202396;
+package com.example.lab4_20202396.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
