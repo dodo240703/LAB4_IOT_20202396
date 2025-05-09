@@ -29,9 +29,18 @@ public class AppActivity extends AppCompatActivity {
         }
     }
 
-    // Opción para que el botón Atrás te lleve de vuelta a MainActivity
     @Override
     public void onBackPressed() {
-        finish(); // vuelve a MainActivity directamente
+        NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.nav_host_fragment);
+        if (navHostFragment != null) {
+            NavController navController = navHostFragment.getNavController();
+            if (!navController.popBackStack()) {
+                super.onBackPressed();
+            }
+        } else {
+            super.onBackPressed();
+        }
     }
+
 }

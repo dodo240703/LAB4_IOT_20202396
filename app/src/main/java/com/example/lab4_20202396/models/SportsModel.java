@@ -9,7 +9,7 @@ public class SportsModel {
         public String tournament;
         public String start;
         public String stadium;
-        public String match;     // Ejemplo: "Chelsea vs Djurgardens IF"
+        public String match;
         public String country;
         public String region;
     }

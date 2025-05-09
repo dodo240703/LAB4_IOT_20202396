@@ -38,14 +38,14 @@ public class ForecastFragment extends Fragment implements SensorEventListener {
     private List<ForecastModel.ForecastDay> forecastDays;
     private final String API_KEY = "ec24b1c6dd8a4d528c1205500250305";
 
-    // Sensor
+    //Sensor
     private SensorManager sensorManager;
     private Sensor accelerometer;
     private float accelerationCurrentValue;
     private float accelerationLastValue;
     private final float SHAKE_THRESHOLD = 20.0f;
 
-    // Búsqueda manual
+    //Búsqueda manual
     private EditText etManualId, etManualDays;
     private Button btnBuscarManual;
 
@@ -74,13 +74,13 @@ public class ForecastFragment extends Fragment implements SensorEventListener {
         String idLocation = getArguments() != null ? getArguments().getString("idLocation") : null;
 
         if (idLocation != null) {
-            // Ocultar campos manuales si el ID viene desde LocationFragment
+            //Ocultar campos manuales si el ID viene desde LocationFragment
             etManualId.setVisibility(View.GONE);
             etManualDays.setVisibility(View.GONE);
             btnBuscarManual.setVisibility(View.GONE);
             getForecast(idLocation, 14);
         } else {
-            // Mostrar búsqueda manual
+            //Mostrar búsqueda manual
             btnBuscarManual.setOnClickListener(v -> {
                 String idInput = etManualId.getText().toString().trim();
                 String daysInput = etManualDays.getText().toString().trim();
@@ -158,7 +158,6 @@ public class ForecastFragment extends Fragment implements SensorEventListener {
 
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
-        // No utilizado
     }
 
     @Override
