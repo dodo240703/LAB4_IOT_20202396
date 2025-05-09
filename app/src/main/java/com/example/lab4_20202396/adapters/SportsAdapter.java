@@ -32,11 +32,13 @@ public class SportsAdapter extends RecyclerView.Adapter<SportsAdapter.SportsView
     @Override
     public void onBindViewHolder(@NonNull SportsViewHolder holder, int position) {
         SportsModel.Match match = matches.get(position);
-        holder.tvTeams.setText(match.team1 + " vs " + match.team2);
+
+        holder.tvTeams.setText(match.match); // "Chelsea vs Djurgardens IF"
         holder.tvTournament.setText("Torneo: " + match.tournament);
         holder.tvStadium.setText("Estadio: " + match.stadium);
         holder.tvDate.setText("Inicio: " + match.start);
     }
+
 
     @Override
     public int getItemCount() {

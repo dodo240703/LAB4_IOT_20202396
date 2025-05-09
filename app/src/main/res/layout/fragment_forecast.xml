@@ -1,11 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="16dp">
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Estos dos campos y el botón aparecerán si no hay argumentos -->
+    <EditText
+        android:id="@+id/etManualId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ID de la locación (ej. 1802603)"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/etManualDays"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Número de días (máx. 14)"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/btnBuscarManual"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Buscar pronóstico" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvForecast"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="0dp"
+        android:layout_weight="1" />
 </LinearLayout>

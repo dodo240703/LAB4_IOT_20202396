@@ -60,7 +60,7 @@ public class SportsFragment extends Fragment {
                     @Override
                     public void onResponse(@NonNull Call<SportsModel> call, @NonNull Response<SportsModel> response) {
                         if (response.isSuccessful() && response.body() != null) {
-                            rvSports.setAdapter(new SportsAdapter(response.body().football.match));
+                            rvSports.setAdapter(new SportsAdapter(response.body().football));
                         } else {
                             Toast.makeText(getContext(), "Sin datos disponibles", Toast.LENGTH_SHORT).show();
                         }
